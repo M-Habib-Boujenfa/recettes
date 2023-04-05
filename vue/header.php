@@ -5,11 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><? $titre ?? "Liste de recettes" ?></title>
+    <title><?= $titre ?? "Liste de recettes" ?></title>
 </head>
 
 <body>
-
-</body>
-
-</html>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.php?page=accueil">Accueil</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>

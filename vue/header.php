@@ -13,6 +13,7 @@
         <nav>
             <ul>
                 <li><a href="index.php?page=accueil">Accueil</a></li>
+                <li><a href="index.php?page=ajoutRecette">Ajouter une recette</a></li>
             </ul>
         </nav>
     </header>

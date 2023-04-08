@@ -27,7 +27,7 @@ class RecetteModele
     public function getRecettes(): array
     {
         $db = new DB;
-        $recettes = $db::connexion()->prepare("SELECT * FROM plat");
+        $recettes = $db::connexion()->prepare("SELECT * FROM plat ORDER BY id DESC");
         $recettes->execute();
         return $recettes->fetchAll(PDO::FETCH_OBJ);
     }

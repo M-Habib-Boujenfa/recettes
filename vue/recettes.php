@@ -1,10 +1,10 @@
 <?php
 
-/**
- * @todo afficher les recettes (tableau d'objet recettes)
- */
-var_dump($allRecettes);
-
-foreach ($allRecettes as $key => $value) {
-    echo ($key);
-}
+foreach ($allRecettes as $recette) : ?>
+    <article>
+        <h2><a href="?page=afficherRecettes&id=<?= $recette->id ?>"><?= $recette->titre ?></a></h2>
+        <p><?= $recette->ingredient ?></p>
+        <p><?= $recette->preparation ?></p>
+    </article>
+<?php
+endforeach;

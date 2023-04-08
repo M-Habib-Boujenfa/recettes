@@ -17,6 +17,12 @@ switch ($page) {
         }
         include_once("vue/formRecette.php");
         break;
+    case 'afficherRecettes':
+        require_once("controller/RecetteController.php");
+        $recettes = new RecetteController;
+        $allRecettes = $recettes->getRecettes();
+        require_once("vue/recettes.php");
+        break;
     default:
         include_once("vue/accueil.php");
         break;

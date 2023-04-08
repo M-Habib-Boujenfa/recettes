@@ -23,4 +23,12 @@ class RecetteModele
         $recette->bindValue(":preparation", $preparation, PDO::PARAM_STR);
         $recette->execute();
     }
+
+    public function getRecettes(): array
+    {
+        $db = new DB;
+        $recettes = $db::connexion()->prepare("SELECT * FROM plat");
+        $recettes->execute();
+        return $recettes->fetchAll(PDO::FETCH_OBJ);
+    }
 }

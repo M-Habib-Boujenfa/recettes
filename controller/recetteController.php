@@ -76,17 +76,24 @@ class RecetteController
      * @todo methode ajouter une recette
      */
 
-    public function ajouterUneRecette()
+    public function ajouterUneRecette(): void
     {
         /**
          * @todo faire les vérifications de sécurité pour les inputs au niveau des $_POST
          */
         $recette = new RecetteController;
-        $recette->setTitre($_POST["titre"]);
-        $recette->setIngredient($_POST["ingredient"]);
-        $recette->setPreparation($_POST["preparation"]);
+        $recette->setTitre(strip_tags($_POST["titre"]));
+        $recette->setIngredient(strip_tags($_POST["ingredient"]));
+        $recette->setPreparation(strip_tags($_POST["preparation"]));
         require_once("model/RecetteModele.php");
         $recetteModele = new RecetteModele;
         $recetteModele->ajouterUneRecette($recette->getTitre(), $recette->getIngredient(), $recette->getPreparation());
+    }
+
+    public function getRecettes(): array
+    {
+        require_once("model/RecetteModele.php");
+        $recetteModele = new RecetteModele;
+        return $recetteModele->getRecettes();
     }
 }

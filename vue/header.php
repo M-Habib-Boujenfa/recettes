@@ -14,6 +14,7 @@
             <ul>
                 <li><a href="index.php?page=accueil">Accueil</a></li>
                 <li><a href="index.php?page=ajoutRecette">Ajouter une recette</a></li>
+                <li><a href="index.php?page=afficherRecettes">Toutes les recettes</a></li>
             </ul>
         </nav>
     </header>

@@ -24,11 +24,13 @@ switch ($page) {
     case 'afficherRecettes':
         require_once("controller/RecetteController.php");
         $recettes = new RecetteController;
-        /**
-         * @todo afficher Une recette par rapport a son ID
-         */
-        $allRecettes = $recettes->getRecettes();
-        require_once("vue/recettes.php");
+        if (isset($_GET["id"])) {
+            $recette =  $recettes->getRecette($_GET["id"]);
+            require_once("vue/recette.php");
+        } else {
+            $allRecettes = $recettes->getRecettes();
+            require_once("vue/recettes.php");
+        }
         break;
     default:
         require_once("controller/RecetteController.php");

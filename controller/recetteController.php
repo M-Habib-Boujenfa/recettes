@@ -96,4 +96,11 @@ class RecetteController
         $recetteModele = new RecetteModele;
         return $recetteModele->getRecettes();
     }
+
+    public function getRecette(int $id): object
+    {
+        require_once("model/RecetteModele.php");
+        $recetteModele = new RecetteModele;
+        return $recetteModele->getRecette($id);
+    }
 }

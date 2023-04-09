@@ -31,4 +31,12 @@ class RecetteModele
         $recettes->execute();
         return $recettes->fetchAll(PDO::FETCH_OBJ);
     }
+
+    public function getRecette(int $id): object
+    {
+        $db = new DB;
+        $recettes = $db::connexion()->prepare("SELECT * FROM plat WHERE id= $id");
+        $recettes->execute();
+        return $recettes->fetch(PDO::FETCH_OBJ);
+    }
 }

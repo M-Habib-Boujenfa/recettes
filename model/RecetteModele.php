@@ -39,4 +39,16 @@ class RecetteModele
         $recettes->execute();
         return $recettes->fetch(PDO::FETCH_OBJ);
     }
+
+    public function modiferRecette(int $id, string $titre, string $ingredient, string $preparation)
+    {
+        $recette = DB::connexion()->prepare("UPDATE plat SET titre = '$titre', ingredient = '$ingredient', preparation = '$preparation' WHERE id = $id");
+        $recette->execute();
+    }
+
+    public function supprimerRecette(int $id)
+    {
+        $recette = DB::connexion()->prepare("DELETE FROM plat WHERE id = $id");
+        $recette->execute();
+    }
 }

@@ -103,4 +103,21 @@ class RecetteController
         $recetteModele = new RecetteModele;
         return $recetteModele->getRecette($id);
     }
+
+    public function modifierRecette(int $id)
+    {
+        $titre = strip_tags($_POST["titre"]);
+        $ingredient = strip_tags($_POST["ingredient"]);
+        $preparation = strip_tags($_POST["preparation"]);
+        require_once("model/RecetteModele.php");
+        $recetteModele = new RecetteModele;
+        $recetteModele->modiferRecette($id, $titre, $ingredient, $preparation);
+    }
+
+    public function supprimerRecette(int $id)
+    {
+        require_once("model/RecetteModele.php");
+        $recetteModele = new RecetteModele;
+        $recetteModele->supprimerRecette($id);
+    }
 }

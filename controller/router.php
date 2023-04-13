@@ -6,7 +6,11 @@ switch ($page) {
     case 'accueil':
         require_once("controller/RecetteController.php");
         $recettes = new RecetteController;
-        $allRecettes = $recettes->getRecettes();
+        if (isset($_POST["recherche"])) {
+            $resultatRecherche =  $recettes->recherche($_POST["recherche"]);
+        } else {
+            $allRecettes = $recettes->getRecettes();
+        }
         include_once("vue/accueil.php");
         break;
     case 'ajoutRecette':
@@ -53,7 +57,11 @@ switch ($page) {
     default:
         require_once("controller/RecetteController.php");
         $recettes = new RecetteController;
-        $allRecettes = $recettes->getRecettes();
+        if (isset($_POST["recherche"])) {
+            $resultatRecherche =  $recettes->recherche($_POST["recherche"]);
+        } else {
+            $allRecettes = $recettes->getRecettes();
+        }
         include_once("vue/accueil.php");
         break;
 }

@@ -15,7 +15,12 @@
                 <li><a href="index.php?page=accueil">Accueil</a></li>
                 <li><a href="index.php?page=ajoutRecette">Ajouter une recette</a></li>
                 <li><a href="index.php?page=afficherRecettes">Toutes les recettes</a></li>
-                <!-- A faire : barre de recherche pour trouver une recette par son nom -->
+                <li>
+                    <form action="" method="post">
+                        <input type="text" name="recherche" id="recherche" placeholder="Rechercher une recette">
+                        <button type="submit">Chercher une recette</button>
+                    </form>
+                </li>
             </ul>
         </nav>
     </header>

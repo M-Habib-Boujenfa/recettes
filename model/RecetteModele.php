@@ -51,4 +51,12 @@ class RecetteModele
         $recette = DB::connexion()->prepare("DELETE FROM plat WHERE id = $id");
         $recette->execute();
     }
+
+    public function recherche(string $recherche)
+    {
+        $recette = DB::connexion()->prepare("SELECT * FROM plat WHERE titre LIKE :recherche");
+        $recette->bindValue(":recherche", "%$recherche%", PDO::PARAM_STR);
+        $recette->execute();
+        return $recette->fetchAll(PDO::FETCH_OBJ);
+    }
 }

@@ -120,4 +120,12 @@ class RecetteController
         $recetteModele = new RecetteModele;
         $recetteModele->supprimerRecette($id);
     }
+
+    public function recherche(string $rechercher): array
+    {
+        require_once("model/RecetteModele.php");
+        $recetteModele = new RecetteModele;
+        $resultatRecherche = $recetteModele->recherche($rechercher);
+        return $resultatRecherche;
+    }
 }

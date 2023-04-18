@@ -1,0 +1,28 @@
+body {
+  background-color: rgba(138, 134, 134, 0.863);
+}
+/* navbar  */
+nav ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+li {
+  list-style-type: none;
+}
+
+li a {
+  text-decoration: none;
+}
+
+input {
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: groove;
+  background-color: #eee;
+  background-color: beige;
+}
+textarea {
+  background-color: beige;
+}

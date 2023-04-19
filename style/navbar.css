@@ -1,5 +1,5 @@
 body {
-  background-color: rgba(138, 134, 134, 0.863);
+  background-color: rgba(112, 110, 110, 0.719);
 }
 /* navbar  */
 nav ul {
@@ -25,4 +25,12 @@ input {
 }
 textarea {
   background-color: beige;
+}
+
+@media screen and (max-width: 660px) {
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 }
